@@ -1,0 +1,32 @@
+.Menu {
+  list-style: none;
+}
+
+.MenuItem {
+  display: inline-block;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.Link {
+  color: white;
+  text-decoration: none;
+}
+
+.Link:hover {
+  color: blue;
+}
+
+.Button {
+  color: white;
+  border: none;
+  background-color: inherit;
+  font-size: inherit;
+  outline: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.Button:hover {
+  color: blue;
+}

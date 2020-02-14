@@ -1,0 +1,19 @@
+.List {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.ListItem {
+  display: inline-block;
+  margin: 0 40px 10px 10px;
+}
+
+.Link {
+  color: white;
+  text-decoration: none;
+}
+
+.Link:hover {
+  color: blue;
+}
