@@ -14,22 +14,22 @@ export const Menu = ({ handleSwitchNavBar }) => (
       </Link>
     </li>
     <li className={styles.MenuItem}>
-      <Link to="/popular" className={styles.Link}>
+      <Link to="/list/popular" className={styles.Link}>
         Popular
       </Link>
     </li>
     <li className={styles.MenuItem}>
-      <Link to="/top_rated" className={styles.Link}>
+      <Link to="/list/top_rated" className={styles.Link}>
         Top Rated
       </Link>
     </li>
     <li className={styles.MenuItem}>
-      <Link to="/upcoming" className={styles.Link}>
+      <Link to="/list/upcoming" className={styles.Link}>
         Upcoming
       </Link>
     </li>
     <li className={styles.MenuItem}>
-      <Link className={styles.Link} onClick={() => handleSwitchNavBar()}>
+      <Link to='#' className={styles.Link} onClick={() => handleSwitchNavBar()}>
         Categories
       </Link>
     </li>

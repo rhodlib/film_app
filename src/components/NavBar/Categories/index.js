@@ -11,14 +11,14 @@ export const Categories = ({ categories = [], handleSwitchNavBar }) => {
     <ul className={styles.List}>
       {categories === undefined
         ? null
-        : categories.map(categorie => (
-            <li className={styles.ListItem} key={categorie.id}>
+        : categories.map(category => (
+            <li className={styles.ListItem} key={category.id}>
               <Link
                 onClick={() => handleSwitchNavBar()}
                 className={styles.Link}
-                to={`/genre/${categorie.id}`}
+                to={`/genre/${category.id}`}
               >
-                {categorie.name}
+                {category.name}
               </Link>
             </li>
           ))}
@@ -27,7 +27,7 @@ export const Categories = ({ categories = [], handleSwitchNavBar }) => {
 };
 
 Categories.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.string),
+  categories: PropTypes.arrayOf(PropTypes.object),
   handleSwitchNavBar: PropTypes.func.isRequired
 };
 
