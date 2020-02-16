@@ -16,12 +16,14 @@ export const MoviePage = () => {
   useEffect(() => {
     dispatch(fetchMovie(id));
   }, [dispatch, id]);
+  console.log(movieResp)
   return (
     <div className={styles.MoviePage}>
       {movieResp.movie === undefined ? (
         <Loader />
       ) : (
         <DetailsMovieCard
+          genres={movieResp.movie.genres}
           title={movieResp.movie.title}
           average={movieResp.movie.vote_average}
           release={movieResp.movie.release_date}

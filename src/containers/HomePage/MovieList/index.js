@@ -1,7 +1,6 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 import styles from "./MovieList.module.css";
-import Loader from "../../../components/Loader";
 import PropTypes from "prop-types";
 
 /**
@@ -10,10 +9,8 @@ import PropTypes from "prop-types";
 export const MovieList = ({ movieArray = [] }) => {
   return (
       <div className={styles.MovieList}>
-        {movieArray.films === undefined ? (
-          <Loader />
-        ) : (
-          movieArray.films.map(movie => (
+        {
+          movieArray.map(movie => (
             <MovieCard
               key={movie.id}
               id={movie.id}
@@ -22,13 +19,13 @@ export const MovieList = ({ movieArray = [] }) => {
               image={movie.poster_path}
             />
           ))
-        )}
+        }
       </div>
   );
 };
 
 MovieList.propTypes = {
-  movieArray: PropTypes.arrayOf(PropTypes.string)
+  movieArray: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default MovieList;

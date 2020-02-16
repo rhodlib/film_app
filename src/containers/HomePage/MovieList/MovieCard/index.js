@@ -22,7 +22,7 @@ export const MovieCard = ({ image, title, id }) => {
 MovieCard.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired
+  id: PropTypes.number.isRequired
 };
 
 export default MovieCard;

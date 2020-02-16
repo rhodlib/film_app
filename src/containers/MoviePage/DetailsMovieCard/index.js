@@ -10,7 +10,8 @@ export const DetailsMovieCard = ({
   average,
   release,
   overview,
-  image
+  image,
+  genres
 }) => {
   return (
     <div className={styles.DetailsMovieCard}>
@@ -20,11 +21,10 @@ export const DetailsMovieCard = ({
         alt={title}
       />
       <div className={styles.DetailsMovieInfo}>
-        <div className={styles.DetailsTitle}>
-          <h1>{title}</h1>
-          <div className={styles.Average}>{average}</div>
-        </div>
-        <p>{release}</p>
+        <h2 className={styles.Title}>{title}</h2>
+        <div className={styles.Average}>{average}</div>
+        <p>Release Date: {release}</p>
+        <h3>Overview</h3>
         <p>{overview}</p>
       </div>
     </div>
@@ -32,11 +32,11 @@ export const DetailsMovieCard = ({
 };
 
 DetailsMovieCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  average: PropTypes.string.isRequired,
-  release: PropTypes.string.isRequired,
-  overview: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired
+  title: PropTypes.string,
+  average: PropTypes.number,
+  release: PropTypes.string,
+  overview: PropTypes.string,
+  image: PropTypes.string
 };
 
 export default DetailsMovieCard;
