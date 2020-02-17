@@ -8,24 +8,21 @@ import PropTypes from "prop-types";
  */
 export const MovieList = ({ movieArray = [] }) => {
   return (
-      <div className={styles.MovieList}>
-        {
-          movieArray.map(movie => (
-            <MovieCard
-              key={movie.id}
-              id={movie.id}
-              title={movie.title}
-              description={movie.overview}
-              image={movie.poster_path}
-            />
-          ))
-        }
-      </div>
+    <div className={styles.MovieList}>
+      {movieArray.map(movie => (
+        <MovieCard
+          key={movie.id}
+          id={movie.id}
+          title={movie.title}
+          image={movie.poster_path}
+        />
+      ))}
+    </div>
   );
 };
 
 MovieList.propTypes = {
-  movieArray: PropTypes.arrayOf(PropTypes.string).isRequired,
+  movieArray: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default MovieList;

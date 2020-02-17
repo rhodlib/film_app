@@ -1,25 +1,21 @@
 import React from "react";
-import {
-  Router,
-  Route,
-  Switch,
-} from "react-router-dom";
-import history from './history';
+import { Router, Route, Switch } from "react-router-dom";
+import history from "./history";
 import { Provider } from "react-redux";
 import store from "./core";
-import Layout from './components/Layout';
+import Layout from "./components/Layout";
 import HomePage from "./containers/HomePage";
 import MoviePage from "./containers/MoviePage";
 import SearchPage from "./containers/SearchPage";
-import NotFound from './components/NotFound';
+import NotFound from "./components/NotFound";
 
-export const App = () =>(
+export const App = () => (
   <Provider store={store}>
     <Router history={history}>
       <Layout>
         <Switch>
           <Route exact strict path="/">
-            <SearchPage/>
+            <SearchPage />
           </Route>
           <Route exact strict path="/list/:type">
             <HomePage />
@@ -33,9 +29,11 @@ export const App = () =>(
           <Route path="/movie/:id">
             <MoviePage />
           </Route>
-          <Route component={NotFound}/>
+          <Route>
+            <NotFound name={"Page not found"} />
+          </Route>
         </Switch>
-      </Layout>  
+      </Layout>
     </Router>
   </Provider>
 );

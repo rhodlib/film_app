@@ -1,8 +1,11 @@
 .DetailsMovieCard {
-  background-color: yellowgreen;
+  margin-top: 80px;
+  background-color: #37474f;
+  color: white;
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   box-shadow: 7px 10px 11px -4px rgba(0, 0, 0, 0.75);
 }
@@ -28,10 +31,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: flex-end;
   border-radius: 50%;
   font-size: 2em;
-  color: white;
-  background-color: #102027;
+  font-weight: bold;
+  color: green;
+  border: 5px solid green;
   width: 60px;
   height: 60px;
 }
