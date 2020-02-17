@@ -16,6 +16,8 @@ export const MovieTrailer = ({ movieVideo = [] }) => (
       <ReactPlater
         url={`https://www.youtube.com/watch?v=${movieVideo[0].key}`}
         className={styles.Video}
+        controls
+        width="50%"
       />
     )}
   </div>

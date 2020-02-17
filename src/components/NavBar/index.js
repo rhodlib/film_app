@@ -24,11 +24,16 @@ export const NavBar = () => {
     return submenu === false ? setSubmenu(true) : setSubmenu(false);
   };
 
+  // Function to hidden submenu.
+  const handleCloseSubmenu = () => {
+    setSubmenu(false)
+  };
+
   return (
     <div>
       <div className={styles.NavBar}>
         <h1 className={styles.Title}>FilmApp</h1>
-        <Menu handleSwitchNavBar={handleSwitchNavBar} />
+        <Menu handleSwitchNavBar={handleSwitchNavBar} handleCloseSubmenu={handleCloseSubmenu}/>
       </div>
       <div
         className={submenu ? styles.BottomNavBar : styles.BottomNavBarOculted}

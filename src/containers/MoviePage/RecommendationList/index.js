@@ -1,5 +1,5 @@
 import React from "react";
-import RecommendationCard from "../RecommendationCard";
+import RecommendationCard from "./RecommendationCard";
 import styles from "./RecommendationList.module.css";
 import PropTypes from "prop-types";
 
@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 export const RecommendationList = ({ recommendations = [] }) => {
   return (
     <div className={styles.RecommendationContainer}>
-      <h1 className={styles.Title}>Recommendations</h1>
+      <h1>Recommendations</h1>
       <div className={styles.RecomendationList}>
         {recommendations.map(movie => (
           <RecommendationCard

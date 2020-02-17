@@ -6,25 +6,25 @@ import PropTypes from "prop-types";
 /**
  * Menu NavBar Component.
  */
-export const Menu = ({ handleSwitchNavBar }) => (
+export const Menu = ({ handleSwitchNavBar, handleCloseSubmenu }) => (
   <ul className={styles.Menu}>
     <li className={styles.MenuItem}>
-      <Link to="/" className={styles.Link}>
+      <Link to="/" className={styles.Link} onClick={() => handleCloseSubmenu()}>
         Search
       </Link>
     </li>
-    <li className={styles.MenuItem}>
-      <Link to="/list/popular" className={styles.Link}>
+    <li className={[styles.MenuItem, styles.MenuItemHidden].join(" ")}>
+      <Link to="/list/popular" className={styles.Link} onClick={() => handleCloseSubmenu()}>
         Popular
       </Link>
     </li>
-    <li className={styles.MenuItem}>
-      <Link to="/list/top_rated" className={styles.Link}>
+    <li className={[styles.MenuItem, styles.MenuItemHidden].join(" ")}>
+      <Link to="/list/top_rated" className={styles.Link} onClick={() => handleCloseSubmenu()}>
         Top Rated
       </Link>
     </li>
-    <li className={styles.MenuItem}>
-      <Link to="/list/upcoming" className={styles.Link}>
+    <li className={[styles.MenuItem, styles.MenuItemHidden].join(" ")}>
+      <Link to="/list/upcoming" className={styles.Link} onClick={() => handleCloseSubmenu()}>
         Upcoming
       </Link>
     </li>
@@ -37,7 +37,8 @@ export const Menu = ({ handleSwitchNavBar }) => (
 );
 
 Menu.propTypes = {
-  handleSwitchNavBar: PropTypes.func.isRequired
+  handleSwitchNavBar: PropTypes.func.isRequired,
+  handleCloseSubmenu: PropTypes.func.isRequired
 };
 
 export default Menu;
