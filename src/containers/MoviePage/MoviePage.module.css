@@ -1,7 +1,15 @@
 .MoviePage {
   height: 100vh;
-  background-color: #c7c7c7;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
 }
+
+.Loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+

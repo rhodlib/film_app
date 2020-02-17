@@ -20,9 +20,9 @@ export const MovieCard = ({ image, title, id }) => {
 };
 
 MovieCard.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired
+  image: PropTypes.string,
+  title: PropTypes.string,
+  id: PropTypes.number
 };
 
 export default MovieCard;

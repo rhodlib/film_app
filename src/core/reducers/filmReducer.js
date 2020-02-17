@@ -38,7 +38,7 @@ export default (state = INITIAL_STATE, action) => {
     case FETCH_MOVIE:
       return {
         ...state,
-        movie: action.payload
+        movie: action.payload,
       };
     case FETCH_TRAILER:
       return {

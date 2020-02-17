@@ -12,7 +12,8 @@ export const DetailsMovieCard = ({
   release,
   overview,
   image,
-  genres
+  genres,
+  duration
 }) => {
   return (
     <div className={styles.DetailsMovieCard}>
@@ -27,6 +28,7 @@ export const DetailsMovieCard = ({
         <h2 className={styles.Title}>{title}</h2>
         <div className={styles.Average}>{average}</div>
         <p>Release Date: {release}</p>
+        <p>Duration: {duration} min</p>
         <h3>Overview</h3>
         <p>{overview}</p>
         <GenresComponent className={styles.Genres} genres={genres} />
