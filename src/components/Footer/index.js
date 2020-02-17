@@ -1,5 +1,5 @@
 import React from "react";
-import styles from './Footer.module.css';
+import styles from "./Footer.module.css";
 
 /**
  * Footer Component return a div with a paragraph.

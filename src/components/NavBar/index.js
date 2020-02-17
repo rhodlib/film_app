@@ -21,7 +21,7 @@ export const NavBar = () => {
 
   // Function to hidden/show submenu.
   const handleSwitchNavBar = () => {
-    return (submenu === false) ? setSubmenu(true) : setSubmenu(false);
+    return submenu === false ? setSubmenu(true) : setSubmenu(false);
   };
 
   return (
@@ -33,7 +33,10 @@ export const NavBar = () => {
       <div
         className={submenu ? styles.BottomNavBar : styles.BottomNavBarOculted}
       >
-        <Categories categories={categories} handleSwitchNavBar={handleSwitchNavBar}/>
+        <Categories
+          categories={categories}
+          handleSwitchNavBar={handleSwitchNavBar}
+        />
       </div>
     </div>
   );

@@ -1,5 +1,22 @@
-import { FETCH_DATA, FETCH_MOVIE, FETCH_CATEGORIES, LOADING, ERROR} from "./constants";
-import { getData, getCategories, getMoviesForGenre, getSearchMovie } from "./services";
+import {
+  FETCH_DATA,
+  FETCH_MOVIE,
+  FETCH_CATEGORIES,
+  LOADING,
+  ERROR,
+  FETCH_RECOMMENDATIONS,
+  FETCH_TRAILER,
+  FETCH_REVIEWS
+} from "./constants";
+import {
+  getData,
+  getCategories,
+  getMoviesForGenre,
+  getSearchMovie,
+  getMovieVideos,
+  getMovieReviews,
+  getMovieRecommendations
+} from "./services";
 
 // fetchData get a list of movies from a service.
 export const fetchData = list => async dispatch => {
@@ -17,7 +34,7 @@ export const fetchData = list => async dispatch => {
     dispatch({
       type: ERROR,
       payload: err.message
-    })
+    });
   }
 };
 
@@ -37,10 +54,11 @@ export const fetchMovieForGenre = id => async dispatch => {
     dispatch({
       type: ERROR,
       payload: err.message
-    })
+    });
   }
 };
 
+// fetchMovieForSearch get a list of movies for a search query.
 export const fetchMovieForSearch = query => async dispatch => {
   dispatch({
     type: LOADING
@@ -56,7 +74,7 @@ export const fetchMovieForSearch = query => async dispatch => {
     dispatch({
       type: ERROR,
       payload: err.message
-    })
+    });
   }
 };
 
@@ -76,7 +94,7 @@ export const fetchMovie = id => async dispatch => {
     dispatch({
       type: ERROR,
       payload: err.message
-    })
+    });
   }
 };
 
@@ -93,6 +111,66 @@ export const fetchCategories = () => async dispatch => {
     dispatch({
       type: ERROR,
       payload: err.message
-    })
+    });
+  }
+};
+
+// fetchMovieRecommendations get a list of recommendations from specific movie, but only the first five go to the state.
+export const fetchMovieRecommendations = id => async dispatch => {
+  dispatch({
+    type: LOADING
+  });
+  try {
+    const result = await getMovieRecommendations(id);
+    dispatch({
+      type: FETCH_RECOMMENDATIONS,
+      payload: result.data.results.slice(0, 5)
+    });
+  } catch (err) {
+    console.log("Error: " + err.message);
+    dispatch({
+      type: ERROR,
+      payload: err.message
+    });
+  }
+};
+
+// fetchMovieVideos get a list of videos from a specific movie.
+export const fetchMovieVideos = id => async dispatch => {
+  dispatch({
+    type: LOADING
+  });
+  try {
+    const result = await getMovieVideos(id);
+    dispatch({
+      type: FETCH_TRAILER,
+      payload: result.data.results
+    });
+  } catch (err) {
+    console.log("Error: " + err.message);
+    dispatch({
+      type: ERROR,
+      payload: err.message
+    });
+  }
+};
+
+// fetchMovieReviews get a list of reviews from a specific movie.
+export const fetchMovieReviews = id => async dispatch => {
+  dispatch({
+    type: LOADING
+  });
+  try {
+    const result = await getMovieReviews(id);
+    dispatch({
+      type: FETCH_REVIEWS,
+      payload: result.data.results
+    });
+  } catch (err) {
+    console.log("Error: " + err.message);
+    dispatch({
+      type: ERROR,
+      payload: err.message
+    });
   }
 };

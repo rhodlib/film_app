@@ -29,7 +29,7 @@ export const Menu = ({ handleSwitchNavBar }) => (
       </Link>
     </li>
     <li className={styles.MenuItem}>
-      <Link to='#' className={styles.Link} onClick={() => handleSwitchNavBar()}>
+      <Link to="#" className={styles.Link} onClick={() => handleSwitchNavBar()}>
         Categories
       </Link>
     </li>
