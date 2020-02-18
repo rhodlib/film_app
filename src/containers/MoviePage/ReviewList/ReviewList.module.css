@@ -9,3 +9,19 @@
   flex-wrap: wrap;
   box-shadow: 7px 10px 11px -4px rgba(0, 0, 0, 0.75);
 }
+
+.ReviewsHidden {
+  display: none;
+}
+
+.Reviews {
+  display: block;
+}
+
+.LinkReviews {
+  font-size: 2rem;
+  margin: 15px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}

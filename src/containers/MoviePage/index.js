@@ -34,33 +34,26 @@ export const MoviePage = () => {
       ) : (
         <>
           {movieResp.loading === true ? (
-            <Loader />
+            <div className={styles.Loader}>
+              <Loader />
+            </div>
           ) : (
-            <DetailsMovieCard
-              genres={movieResp.movie.genres}
-              title={movieResp.movie.title}
-              average={movieResp.movie.vote_average}
-              release={movieResp.movie.release_date}
-              overview={movieResp.movie.overview}
-              image={movieResp.movie.poster_path}
-            />
-          )}
-          {movieResp.loading === true ? (
-            <Loader />
-          ) : (
-            <MovieTrailer movieVideo={movieResp.movieTrailer} />
-          )}
-          {movieResp.loading === true ? (
-            <Loader />
-          ) : (
-            <ReviewList reviews={movieResp.movieReviews} />
-          )}
-          {movieResp.loading === true ? (
-            <Loader />
-          ) : (
-            <RecommendationList
-              recommendations={movieResp.movieRecommendations}
-            />
+            <>
+              <DetailsMovieCard
+                genres={movieResp.movie.genres}
+                title={movieResp.movie.title}
+                average={movieResp.movie.vote_average}
+                release={movieResp.movie.release_date}
+                overview={movieResp.movie.overview}
+                image={movieResp.movie.poster_path}
+                duration={movieResp.movie.runtime}
+              />
+              <MovieTrailer movieVideo={movieResp.movieTrailer} />
+              <ReviewList reviews={movieResp.movieReviews} />
+              <RecommendationList
+                recommendations={movieResp.movieRecommendations}
+              />
+            </>
           )}
         </>
       )}
