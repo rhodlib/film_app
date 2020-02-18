@@ -1,3 +1,17 @@
 .Review {
   padding: 2rem;
+  animation-name: fadeInDown;
+  animation-duration: 200ms;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
