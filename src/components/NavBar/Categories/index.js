@@ -6,15 +6,15 @@ import PropTypes from "prop-types";
 /**
  * Categories Component, receive an array and show a list of elements.
  */
-export const Categories = ({ categories = [], handleSwitchNavBar }) => {
+export const Categories = ({ categories = [], onSwitchNavBar }) => {
   return (
-    <ul className={styles.List}>
+    <ul className={styles.List} data-test="component-categories">
       {categories === undefined
         ? null
         : categories.map(category => (
             <li className={styles.ListItem} key={category.id}>
               <Link
-                onClick={() => handleSwitchNavBar()}
+                onClick={onSwitchNavBar}
                 className={styles.Link}
                 to={`/genre/${category.id}`}
               >
@@ -28,7 +28,7 @@ export const Categories = ({ categories = [], handleSwitchNavBar }) => {
 
 Categories.propTypes = {
   categories: PropTypes.arrayOf(PropTypes.object),
-  handleSwitchNavBar: PropTypes.func.isRequired
+  onSwitchNavBar: PropTypes.func
 };
 
 export default Categories;

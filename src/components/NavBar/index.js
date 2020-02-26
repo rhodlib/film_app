@@ -15,39 +15,32 @@ export const NavBar = () => {
   const [submenu, setSubmenu] = useState();
   const aComponentRef = useRef();
   
-  useClickOutside(aComponentRef, () => {
-    handleCloseSubmenu();;
-  })
-  
-
   // setSubmenu = false for hidden submenu, and dispatch categories for submenu.
   useEffect(() => {
     setSubmenu(false);
     dispatch(fetchCategories());
   }, [dispatch]);
-
+  
   // Function to hidden/show submenu.
-  const handleSwitchNavBar = () => {
-    return submenu === false ? setSubmenu(true) : setSubmenu(false);
-  };
-
+  const handleSwitchNavBar = () => setSubmenu(!submenu);
+  
   // Function to hidden submenu.
-  const handleCloseSubmenu = () => {
-    setSubmenu(false)
-  };
-
+  const handleCloseSubmenu = () => setSubmenu(false);
+  
+  useClickOutside(aComponentRef, handleCloseSubmenu)
+  
   return (
-    <div ref={aComponentRef}>
+    <div ref={aComponentRef} data-test="component-navbar">
       <div className={styles.NavBar}>
         <h1 className={styles.Title}>FilmApp</h1>
-        <Menu handleSwitchNavBar={handleSwitchNavBar} handleCloseSubmenu={handleCloseSubmenu}/>
+        <Menu onSwitchNavBar={handleSwitchNavBar} onCloseSubmenu={handleCloseSubmenu}/>
       </div>
       <div
         className={submenu ? styles.BottomNavBar : styles.BottomNavBarOculted}
       >
         <Categories
           categories={categories}
-          handleSwitchNavBar={handleSwitchNavBar}
+          onSwitchNavBar={handleSwitchNavBar}
         />
       </div>
     </div>

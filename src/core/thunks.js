@@ -162,6 +162,7 @@ export const fetchMovieReviews = id => async dispatch => {
   });
   try {
     const result = await getMovieReviews(id);
+    console.log(result)
     dispatch({
       type: FETCH_REVIEWS,
       payload: result.data.results

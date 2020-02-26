@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.8.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "history": "^4.10.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -23,11 +26,21 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/__test__/setupTest.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(css)$": "<rootDir>/src/__mocks__/styleMock.js"
+    }
   },
   "browserslist": {
     "production": [
@@ -40,5 +53,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.8.4",
+    "check-prop-types": "^1.1.2",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
+    "moxios": "^0.4.0"
   }
 }
