@@ -42,7 +42,9 @@ DetailsMovieCard.propTypes = {
   average: PropTypes.number,
   release: PropTypes.string,
   overview: PropTypes.string,
-  image: PropTypes.string
+  image: PropTypes.string,
+  genres: PropTypes.arrayOf(PropTypes.string),
+  duration: PropTypes.number
 };
 
 export default DetailsMovieCard;

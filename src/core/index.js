@@ -5,10 +5,12 @@ import reducers from "./reducers";
 
 export const initialState = {};
 
-const store = createStore(
+export const middlewares = [reduxThunk];
+export const createStoreWithMiddleware = composeWithDevTools(applyMiddleware(...middlewares))(createStore)
+
+const store = createStoreWithMiddleware(
   reducers,
-  initialState,
-  composeWithDevTools(applyMiddleware(reduxThunk))
+  initialState
 );
 
 export default store;

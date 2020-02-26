@@ -3,10 +3,13 @@ import styles from "./NotFound.module.css";
 import PropTypes from "prop-types";
 
 /**
- * NotFound component.
+ * Functional react component for NotFound message.
+ * @function
+ * @param {string} param0 - String to display with the component.
+ * @returns {JSX.Element} - Rendered component
  */
 export const NotFound = ({ name }) => (
-  <div className={styles.NotFound}>{name}</div>
+  <div data-test="component-not-found" className={styles.NotFound}>{name}</div>
 );
 
 NotFound.propTypes = {

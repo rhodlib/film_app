@@ -14,6 +14,16 @@
 
 5. Go to your [LocalHost:3000](http://localhost:3000)
 
+### To run test
+
+1. Go to the web folder in terminal
+
+2. Run $ yarn test
+
+3. You can see the coverage with $ yarn test --coverage
+
+This web contain 90% + of coverage.
+
 ---
 
 ### Technologies
@@ -31,6 +41,13 @@
 * [axios](https://www.npmjs.com/package/axios)
 * [history](https://www.npmjs.com/package/history)
 * [react-player](https://www.npmjs.com/package/react-player)
+
+#### For Testing
+
+* [enzyme](https://airbnb.io/enzyme/)
+* [jest](https://jestjs.io/)
+* [check-prop-types](https://www.npmjs.com/package/check-prop-types)
+* [moxios](https://github.com/axios/moxios)
 
 ### Tools
 
